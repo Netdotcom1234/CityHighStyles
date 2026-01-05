@@ -211,6 +211,7 @@ function openQuickViewModal(productId) {
 
   const whatsappBtn = document.getElementById('modalWhatsAppBtn');
   whatsappBtn.dataset.productId = productId;
+  whatsappBtn.href = "#"; // Reset href
 
   modal.style.display = 'flex';
   setupModalInteractions(productId);
@@ -258,7 +259,7 @@ function setupModalInteractions(productId) {
     const message = `Hi! I'm interested in:\n\nProduct: ${product.name}\nPrice: $${product.price}\nSize: ${size}\nColor: ${color}\n\nFrom: ${pageUrl}`;
 
     const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    this.href = whatsappUrl;
   };
 }
 
